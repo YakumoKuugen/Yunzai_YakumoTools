@@ -1,0 +1,10 @@
+{
+  "name": "yakumo-tools",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "YakumoKuugen",
+  "license": "MIT"
+}
