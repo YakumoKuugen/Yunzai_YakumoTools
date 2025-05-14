@@ -43,7 +43,7 @@ HtmlTools.GetDate = function (html) {
     const [year, month, day] = match[1].split(/[年月日]/).map(Number);
     const date = new Date(year, month, day);
     var startDate = new Date(date.getTime() + 24 * 60 * 60 * 1000 * 13);
-    var endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000 * 42);
+    var endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000 * 41);
     var codeOverDate = new Date(date.getTime() + 24 * 60 * 60 * 1000);
     var dates = {
         start: `${startDate.getFullYear()}年${startDate.getMonth()}月${startDate.getDate()}日`,

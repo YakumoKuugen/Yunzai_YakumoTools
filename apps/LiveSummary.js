@@ -24,11 +24,11 @@ export class LiveSummary extends YakumoTools {
         )
     }
     async SummaryStarRail() {
-        var text = this.starRailWiki.Summary();
+        var text = this.starRailWiki.LiveSummary();
         this.reply(text, false, { at: false });
     }
     async SummaryGenshin() {
-        var text = this.genshinWiki.Summary();
+        var text = this.genshinWiki.LiveSummary();
         this.reply(text, false, { at: false });
     }
 }
