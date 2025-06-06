@@ -18,6 +18,10 @@ export class LiveSummary extends YakumoTools {
                     {
                         reg: '^#前瞻总结$',
                         fnc: 'SummaryGenshin',
+                    },
+                    {
+                        reg: '^((#|%|/)?(zzz|ZZZ|绝区零))前瞻总结$',
+                        fnc: 'SummaryZZZ',
                     }
                 ]
             },
@@ -29,6 +33,10 @@ export class LiveSummary extends YakumoTools {
     }
     async SummaryGenshin() {
         var text = this.genshinWiki.LiveSummary();
+        this.reply(text, false, { at: false });
+    }
+    async SummaryZZZ() {
+        var text = this.zzzWiki.LiveSummary();
         this.reply(text, false, { at: false });
     }
 }
