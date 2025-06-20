@@ -33,13 +33,16 @@ HtmlTools.GetElement = function (html, title) {
     return plainText;
 };
 HtmlTools.GetDate = function (html) {
-    const regex = /<big>[\s\S]*?(\d{4}年\d{1,2}月\d{1,2}日)[\s\S]*?<\/big>/;
+    var regex = /<p><big>[\s\S]*?(\d{4}年\d{1,2}月\d{1,2}日)[\s\S]*?<\/big>/;
     const match = html.match(regex);
+    if (match == null) {
+        regex = /<big>[\s\S]*?(\d{4}年\d{1,2}月\d{1,2}日)[\s\S]*?<\/big>/;
+        match = html.match(regex);
+    }
     if (match == null) {
         logger.error("没有找到前瞻日期");
         return date;
     }
-
     const [year, month, day] = match[1].split(/[年月日]/).map(Number);
     const date = new Date(year, month, day);
     var startDate = new Date(date.getTime() + 24 * 60 * 60 * 1000 * 13);
